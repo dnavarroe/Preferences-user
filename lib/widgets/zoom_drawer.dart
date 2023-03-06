@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:preferenc_user/screens/screens.dart';
 
@@ -30,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
         slideWidth: MediaQuery.of(context).size.width * 0.6,
         openCurve: Curves.fastOutSlowIn,
         closeCurve: Curves.bounceIn,
-        androidCloseOnBackTap: true,
+        //androidCloseOnBackTap: true,
         mainScreenTapClose: true,
       ),
     );

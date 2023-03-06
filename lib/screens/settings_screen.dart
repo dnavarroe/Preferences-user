@@ -29,15 +29,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
         centerTitle: true,
         leading: IconButton(
           onPressed: (){
-            ZoomDrawer.of(context)!.toggle();
-          //  WidgetsBinding.instance.addPostFrameCallback((_) {
-          //  final drawer = ZoomDrawer.of(context);
-          //  if (drawer != null) {
-          //    drawer.toggle();
-          //  }else{
-          //    Navigator.pushNamed(context, 'DrawerZ');
-          //  }
-          //});
+          //  ZoomDrawer.of(context)!.toggle();
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+            final drawer = ZoomDrawer.of(context);
+            if (drawer != null) {
+              drawer.toggle();
+            }else{
+              Navigator.pushNamed(context, 'DrawerZ');
+            }
+          });
           }, 
           icon: const Icon(Icons.arrow_back_rounded)),
       ),

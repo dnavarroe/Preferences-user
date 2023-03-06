@@ -18,19 +18,19 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.menu),
           onPressed: () {
             //ZoomDrawer.of(context)!.toggle();
-            if(ZoomDrawer.of(context)!.isOpen()){
-              ZoomDrawer.of(context)!.close();
+            //if(ZoomDrawer.of(context)!.isOpen()){
+            //  ZoomDrawer.of(context)!.close();
+            //}else{
+            //  ZoomDrawer.of(context)!.open();
+            //}
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+            final drawer = ZoomDrawer.of(context);
+            if (drawer != null) {
+              drawer.toggle();
             }else{
-              ZoomDrawer.of(context)!.open();
+              Navigator.pushNamed(context, 'DrawerZ');
             }
-          //  WidgetsBinding.instance.addPostFrameCallback((_) {
-          //  final drawer = ZoomDrawer.of(context);
-          //  if (drawer != null) {
-          //    drawer.toggle();
-          //  }else{
-          //    Navigator.pushNamed(context, 'DrawerZ');
-          //  }
-          //});
+          });
           },
         ),
       ),
