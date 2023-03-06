@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:preferenc_user/providers/theme_provider.dart';
+import 'package:preferenc_user/screens/screens.dart';
 import 'package:preferenc_user/share_preferences/preferences.dart';
-import 'package:preferenc_user/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -24,9 +25,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Settings'),),
+        title: const Text('Settings'),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: (){
+            ZoomDrawer.of(context)!.toggle();
+          //  WidgetsBinding.instance.addPostFrameCallback((_) {
+          //  final drawer = ZoomDrawer.of(context);
+          //  if (drawer != null) {
+          //    drawer.toggle();
+          //  }else{
+          //    Navigator.pushNamed(context, 'DrawerZ');
+          //  }
+          //});
+          }, 
+          icon: const Icon(Icons.arrow_back_rounded)),
       ),
-      drawer: const CustomDrawer(),
+      //drawer: const CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(

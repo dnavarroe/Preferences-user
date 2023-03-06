@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:preferenc_user/providers/theme_provider.dart';
 import 'package:preferenc_user/screens/screens.dart';
 import 'package:preferenc_user/share_preferences/preferences.dart';
+import 'package:preferenc_user/widgets/widgets.dart';
+import 'package:preferenc_user/widgets/zoom_drawer.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -23,10 +25,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: HomeScreen.routerName,
+      initialRoute: 'DrawerZ',
       routes: {
         HomeScreen.routerName:(_) => const HomeScreen(),
-        SettingsScreen.routerName:(_) => const SettingsScreen()
+        SettingsScreen.routerName:(_) => const SettingsScreen(),
+        'Drawer':(_) => const CustomDrawer(),
+        'DrawerZ':(context) => const MyHomePage() 
       },
       theme: Provider.of<ThemeProvider>(context).currentTheme,
     );
